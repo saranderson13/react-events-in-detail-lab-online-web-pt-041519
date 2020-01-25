@@ -6,11 +6,19 @@ export default class CoordinatesButton extends Component {
     //     super()
     // }
 
+    handleClick = (e) => {
+        this.props.onReceiveCoordinates([e.clientX, e.clientY])
+    }
+
     render() {
         return (
-            <button onClick={ (e) => { this.props.onReceiveCoordinates([e.clientX, e.clientY]) }}>
-                Coordinates
-            </button>
+            // INLINE OPTION
+            // <button onClick={ (e) => { this.props.onReceiveCoordinates([e.clientX, e.clientY]) }}>
+            //     Coordinates
+            // </button>
+
+            // OPTION WITH NAMED FUNCTION
+            <button onClick={this.handleClick}>Coordinates</button>
         )
     }
 
